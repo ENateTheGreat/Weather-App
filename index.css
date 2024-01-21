@@ -1,0 +1,171 @@
+/* initial load in animation */
+@keyframes fallIn {
+    0% {
+        opacity: 0%;
+        transform: rotate(100deg) scale(0) translateY(250%);
+    }
+    50%{
+        opacity: 30%;
+    }
+    70%{
+        opacity: 60%;
+    }
+    100% {
+        opacity: 100%;
+        transform: rotate(0deg) scale(1) translateY(0%);
+    }
+}
+/* Full page initial styling */
+body{
+    background-image: url('./images/background.jpg');
+    background-clip: padding-box;
+    padding: 10px;
+    font-family: "Poiret One", sans-serif;
+}
+/* main container */
+#container {
+    display: grid;
+    text-align: center;
+    animation: 1s ease-out 0s 1 fallIn;
+}
+/* header container / main item 1 */
+.header-wrapper{
+    grid-template-columns: repeat(4, 1fr);
+}
+/* header item */
+.title {
+    font-family: "Poiret One", sans-serif;
+    font-weight: bolder;
+    font-size: 70px;
+    display: inline-block;
+    border-top: 10px darkblue groove;
+    border-left: 10px darkred groove;
+    border-right: 10px darkblue groove;
+    border-bottom: 10px darkred groove;
+    border-radius: 50px;
+    background-color: silver;
+    grid-column: 2 span 1;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
+}
+/* input container */
+.input-submit{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 17px;
+    margin-top: -22px;
+    font-family: "Poiret One", sans-serif;
+}
+/* input item text */
+.text{
+    grid-column: 2;
+    width: 125px;
+    -webkit-transition: width .35s ease-in-out;
+    transition: width .35s ease-in-out;
+    height: 25px;
+    justify-self: right;
+    text-align: center;
+    background-color: cornsilk;
+    font-family: "Poiret One", sans-serif;
+    font-size: 20px;
+    font-weight: bolder;
+}
+/* Growing text box with changing colors on focus */
+.text:focus{
+    outline: none;
+    border-color: darkred;
+    background: silver;
+    color: black;
+    width: 218px
+    
+}
+/* input item submit */
+.submit{
+    grid-column: 3;
+    width: 100px;
+    font-weight: bolder;
+    font-size: larger;
+    background-color: darkblue;
+    color: silver;
+    border: none;
+    font-family: "Poiret One", sans-serif;
+}
+/* content container */
+.content{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin-top: 40px;
+    background-clip: padding-box;
+    filter: alpha(opacity = 0)
+}
+/* content item name */
+.name{
+    grid-column: 2 / span 2;
+    grid-row: 1;
+    justify-self: normal;
+    text-align: center;
+    padding-top: 25px;
+    font-size: 70px;
+    font-weight: bold;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+    text-shadow: 3px 3px 3px grey;
+}
+/* content item temp */
+.temp{
+    grid-column: 2 / span 2;
+    grid-row: 3;
+    font-size: 40px;
+    font-weight: 600;
+    padding-top: 15px;
+}
+/* content item desc */
+.description{
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 40px;
+    font-weight: 600;
+    justify-self: center;
+    padding-top: 8%;
+}
+/* content item img */
+.image{
+    grid-column: 3;
+    grid-row: 2;
+    height: 100%;
+    justify-self: center;
+}
+/* fancy button */
+button {
+    --c:  darkred; /* the color*/
+    
+    box-shadow: 0 0 0 .1em inset var(--c); 
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background: 
+      var(--_g) calc(var(--_p,0%) - 100%) 0%,
+      var(--_g) calc(200% - var(--_p,0%)) 0%,
+      var(--_g) calc(var(--_p,0%) - 100%) 100%,
+      var(--_g) calc(200% - var(--_p,0%)) 100%;
+    background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
+  }
+  button:hover {
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+  }
+  button:active {
+    box-shadow: 0 0 9e9q inset #0009; 
+    background-color: var(--c);
+    color: #fff;
+  }
+  .submit{
+
+    transition: all.35s ease-in-out;
+  }
+  .submit:hover{
+    margin-left: 15px;
+    transform: scale(1.3);
+  }
